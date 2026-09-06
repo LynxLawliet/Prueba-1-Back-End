@@ -1,0 +1,282 @@
+[
+	{
+		"id": 1,
+		"nombre": "Martillo de carpintero 16 oz",
+		"categoria": "Herramientas manuales",
+		"precio": 8990,
+		"stock": 24
+	},
+	{
+		"id": 2,
+		"nombre": "Destornillador Phillips #2",
+		"categoria": "Herramientas manuales",
+		"precio": 3990,
+		"stock": 35
+	},
+	{
+		"id": 3,
+		"nombre": "Alicate universal 8 pulgadas",
+		"categoria": "Herramientas manuales",
+		"precio": 7490,
+		"stock": 18
+	},
+	{
+		"id": 4,
+		"nombre": "Llave ajustable 10 pulgadas",
+		"categoria": "Herramientas manuales",
+		"precio": 10990,
+		"stock": 12
+	},
+	{
+		"id": 5,
+		"nombre": "Cinta métrica 5 metros",
+		"categoria": "Medición",
+		"precio": 5990,
+		"stock": 42
+	},
+	{
+		"id": 6,
+		"nombre": "Nivel de burbuja 60 cm",
+		"categoria": "Medición",
+		"precio": 8990,
+		"stock": 9
+	},
+	{
+		"id": 7,
+		"nombre": "Serrucho de mano 20 pulgadas",
+		"categoria": "Herramientas manuales",
+		"precio": 12990,
+		"stock": 7
+	},
+	{
+		"id": 8,
+		"nombre": "Cincel para concreto 12 pulgadas",
+		"categoria": "Herramientas manuales",
+		"precio": 4990,
+		"stock": 15
+	},
+	{
+		"id": 9,
+		"nombre": "Taladro percutor 650 W",
+		"categoria": "Herramientas eléctricas",
+		"precio": 45990,
+		"stock": 6
+	},
+	{
+		"id": 10,
+		"nombre": "Esmeril angular 4 1/2 pulgadas",
+		"categoria": "Herramientas eléctricas",
+		"precio": 38990,
+		"stock": 0
+	},
+	{
+		"id": 11,
+		"nombre": "Atornillador inalámbrico 12 V",
+		"categoria": "Herramientas eléctricas",
+		"precio": 34990,
+		"stock": 11
+	},
+	{
+		"id": 12,
+		"nombre": "Sierra circular 1400 W",
+		"categoria": "Herramientas eléctricas",
+		"precio": 69990,
+		"stock": 4
+	},
+	{
+		"id": 13,
+		"nombre": "Broca para concreto 8 mm",
+		"categoria": "Accesorios para herramientas",
+		"precio": 2490,
+		"stock": 50
+	},
+	{
+		"id": 14,
+		"nombre": "Juego de brocas para metal 13 piezas",
+		"categoria": "Accesorios para herramientas",
+		"precio": 11990,
+		"stock": 21
+	},
+	{
+		"id": 15,
+		"nombre": "Disco de corte para metal 4 1/2 pulgadas",
+		"categoria": "Accesorios para herramientas",
+		"precio": 1990,
+		"stock": 33
+	},
+	{
+		"id": 16,
+		"nombre": "Lija para madera grano 120",
+		"categoria": "Abrasivos",
+		"precio": 890,
+		"stock": 46
+	},
+	{
+		"id": 17,
+		"nombre": "Tornillo para madera 6 x 1 1/2 pulgadas",
+		"categoria": "Fijaciones",
+		"precio": 2990,
+		"stock": 28
+	},
+	{
+		"id": 18,
+		"nombre": "Tornillo autoperforante 8 x 1 pulgada",
+		"categoria": "Fijaciones",
+		"precio": 3490,
+		"stock": 0
+	},
+	{
+		"id": 19,
+		"nombre": "Perno hexagonal 3/8 x 2 pulgadas",
+		"categoria": "Fijaciones",
+		"precio": 4490,
+		"stock": 17
+	},
+	{
+		"id": 20,
+		"nombre": "Tuerca hexagonal 3/8 pulgadas",
+		"categoria": "Fijaciones",
+		"precio": 1590,
+		"stock": 31
+	},
+	{
+		"id": 21,
+		"nombre": "Arandela plana 3/8 pulgadas",
+		"categoria": "Fijaciones",
+		"precio": 990,
+		"stock": 38
+	},
+	{
+		"id": 22,
+		"nombre": "Tarugo nylon 8 mm con tornillo",
+		"categoria": "Fijaciones",
+		"precio": 2290,
+		"stock": 44
+	},
+	{
+		"id": 23,
+		"nombre": "Clavo corriente 2 pulgadas 1 kg",
+		"categoria": "Fijaciones",
+		"precio": 2690,
+		"stock": 25
+	},
+	{
+		"id": 24,
+		"nombre": "Cadena galvanizada 6 mm por metro",
+		"categoria": "Ferretería general",
+		"precio": 3990,
+		"stock": 13
+	},
+	{
+		"id": 25,
+		"nombre": "Candado de latón 40 mm",
+		"categoria": "Seguridad",
+		"precio": 6990,
+		"stock": 8
+	},
+	{
+		"id": 26,
+		"nombre": "Cerradura cilíndrica para puerta",
+		"categoria": "Seguridad",
+		"precio": 15990,
+		"stock": 5
+	},
+	{
+		"id": 27,
+		"nombre": "Cinta aisladora negra 18 mm",
+		"categoria": "Electricidad",
+		"precio": 1890,
+		"stock": 36
+	},
+	{
+		"id": 28,
+		"nombre": "Enchufe macho industrial 16 A",
+		"categoria": "Electricidad",
+		"precio": 3290,
+		"stock": 0
+	},
+	{
+		"id": 29,
+		"nombre": "Interruptor simple blanco",
+		"categoria": "Electricidad",
+		"precio": 2490,
+		"stock": 22
+	},
+	{
+		"id": 30,
+		"nombre": "Alargador eléctrico 10 metros",
+		"categoria": "Electricidad",
+		"precio": 12990,
+		"stock": 10
+	},
+	{
+		"id": 31,
+		"nombre": "Tubo LED 18 W 120 cm",
+		"categoria": "Iluminación",
+		"precio": 7990,
+		"stock": 16
+	},
+	{
+		"id": 32,
+		"nombre": "Ampolleta LED luz cálida 9 W",
+		"categoria": "Iluminación",
+		"precio": 2490,
+		"stock": 41
+	},
+	{
+		"id": 33,
+		"nombre": "Silicona sellante transparente 280 ml",
+		"categoria": "Adhesivos y sellantes",
+		"precio": 4990,
+		"stock": 19
+	},
+	{
+		"id": 34,
+		"nombre": "Adhesivo de montaje 300 g",
+		"categoria": "Adhesivos y sellantes",
+		"precio": 5990,
+		"stock": 0
+	},
+	{
+		"id": 35,
+		"nombre": "Cinta teflón 12 mm",
+		"categoria": "Plomería",
+		"precio": 990,
+		"stock": 47
+	},
+	{
+		"id": 36,
+		"nombre": "Llave de paso 1/2 pulgada",
+		"categoria": "Plomería",
+		"precio": 6490,
+		"stock": 14
+	},
+	{
+		"id": 37,
+		"nombre": "Flexibles para lavaplatos 1/2 pulgada",
+		"categoria": "Plomería",
+		"precio": 4490,
+		"stock": 0
+	},
+	{
+		"id": 38,
+		"nombre": "Guantes de trabajo reforzados",
+		"categoria": "Seguridad industrial",
+		"precio": 3990,
+		"stock": 27
+	},
+	{
+		"id": 39,
+		"nombre": "Lentes de seguridad transparentes",
+		"categoria": "Seguridad industrial",
+		"precio": 2990,
+		"stock": 32
+	},
+	{
+		"id": 40,
+		"nombre": "Casco de seguridad ajustable",
+		"categoria": "Seguridad industrial",
+		"precio": 8990,
+		"stock": 3
+	}
+]

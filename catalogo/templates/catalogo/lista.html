@@ -1,0 +1,39 @@
+{% extends 'catalogo/base.html' %}
+
+{% block title %}Catálogo | Ferretería El Constructor{% endblock %}
+
+{% block content %}
+    <section class="container py-5" aria-labelledby="titulo-catalogo">
+        <div class="mb-4">
+            <p class="text-uppercase text-secondary fw-semibold small mb-2">Soluciones para tus proyectos</p>
+            <h1 id="titulo-catalogo" class="display-6 fw-bold mb-2">Catálogo de productos</h1>
+            <p class="text-body-secondary mb-0">Encuentra herramientas, materiales y accesorios para cada trabajo.</p>
+        </div>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
+            {% for producto in productos %}
+                <div class="col">
+                    <article class="card h-100 shadow-sm border-0">
+                        <div class="card-body d-flex flex-column">
+                            <span class="badge text-bg-secondary align-self-start mb-3">{{ producto.categoria }}</span>
+                            <h2 class="card-title h5">{{ producto.nombre }}</h2>
+                            <p class="fs-4 fw-bold text-primary mb-2">${{ producto.precio|floatformat:0 }}</p>
+                            {% if producto.stock > 0 %}
+                                <p class="card-text text-success mb-4">Stock disponible: {{ producto.stock }}</p>
+                            {% else %}
+                                <p class="card-text text-danger mb-4">Producto sin stock</p>
+                            {% endif %}
+                            <a class="btn btn-primary mt-auto" href="{% url 'detalle' producto.id %}">
+                                Ver detalle
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <div class="alert alert-info" role="status">No hay productos disponibles.</div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock %}
