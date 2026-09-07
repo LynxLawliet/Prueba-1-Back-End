@@ -4,279 +4,359 @@
 		"nombre": "Martillo de carpintero 16 oz",
 		"categoria": "Herramientas manuales",
 		"precio": 8990,
-		"stock": 24
+		"stock": 24,
+		"imagen_url": "https://loremflickr.com/640/360/claw,hammer,carpentry?lock=1",
+		"imagen_archivo": "martillo_carpintero_16oz.jpg"
 	},
 	{
 		"id": 2,
 		"nombre": "Destornillador Phillips #2",
 		"categoria": "Herramientas manuales",
 		"precio": 3990,
-		"stock": 35
+		"stock": 35,
+		"imagen_url": "https://loremflickr.com/640/360/phillips,screwdriver,tool?lock=2",
+		"imagen_archivo": "destornillador_phillips_numero_2.jpg"
 	},
 	{
 		"id": 3,
 		"nombre": "Alicate universal 8 pulgadas",
 		"categoria": "Herramientas manuales",
 		"precio": 7490,
-		"stock": 18
+		"stock": 18,
+		"imagen_url": "https://loremflickr.com/640/360/combination,pliers,tool?lock=3",
+		"imagen_archivo": "alicate_universal_8_pulgadas.jpg"
 	},
 	{
 		"id": 4,
 		"nombre": "Llave ajustable 10 pulgadas",
 		"categoria": "Herramientas manuales",
 		"precio": 10990,
-		"stock": 12
+		"stock": 12,
+		"imagen_url": "https://loremflickr.com/640/360/adjustable,wrench,tool?lock=4",
+		"imagen_archivo": "llave_ajustable_10_pulgadas.jpg"
 	},
 	{
 		"id": 5,
 		"nombre": "Cinta métrica 5 metros",
 		"categoria": "Medición",
 		"precio": 5990,
-		"stock": 42
+		"stock": 42,
+		"imagen_url": "https://loremflickr.com/640/360/tape,measure,construction?lock=5",
+		"imagen_archivo": "cinta_metrica_5_metros.jpg"
 	},
 	{
 		"id": 6,
 		"nombre": "Nivel de burbuja 60 cm",
 		"categoria": "Medición",
 		"precio": 8990,
-		"stock": 9
+		"stock": 9,
+		"imagen_url": "https://loremflickr.com/640/360/spirit,level,construction?lock=6",
+		"imagen_archivo": "nivel_burbuja_60_cm.jpg"
 	},
 	{
 		"id": 7,
 		"nombre": "Serrucho de mano 20 pulgadas",
 		"categoria": "Herramientas manuales",
 		"precio": 12990,
-		"stock": 7
+		"stock": 7,
+		"imagen_url": "https://loremflickr.com/640/360/hand,saw,woodworking?lock=7",
+		"imagen_archivo": "serrucho_mano_20_pulgadas.jpg"
 	},
 	{
 		"id": 8,
 		"nombre": "Cincel para concreto 12 pulgadas",
 		"categoria": "Herramientas manuales",
 		"precio": 4990,
-		"stock": 15
+		"stock": 15,
+		"imagen_url": "https://loremflickr.com/640/360/masonry,chisel,concrete?lock=8",
+		"imagen_archivo": "cincel_concreto_12_pulgadas.jpg"
 	},
 	{
 		"id": 9,
 		"nombre": "Taladro percutor 650 W",
 		"categoria": "Herramientas eléctricas",
 		"precio": 45990,
-		"stock": 6
+		"stock": 6,
+		"imagen_url": "https://loremflickr.com/640/360/hammer,drill,construction?lock=9",
+		"imagen_archivo": "taladro_percutor_650w.jpg"
 	},
 	{
 		"id": 10,
 		"nombre": "Esmeril angular 4 1/2 pulgadas",
 		"categoria": "Herramientas eléctricas",
 		"precio": 38990,
-		"stock": 0
+		"stock": 0,
+		"imagen_url": "https://loremflickr.com/640/360/angle,grinder,metal?lock=10",
+		"imagen_archivo": "esmeril_angular_4_5_pulgadas.jpg"
 	},
 	{
 		"id": 11,
 		"nombre": "Atornillador inalámbrico 12 V",
 		"categoria": "Herramientas eléctricas",
 		"precio": 34990,
-		"stock": 11
+		"stock": 11,
+		"imagen_url": "https://loremflickr.com/640/360/cordless,screwdriver,tool?lock=11",
+		"imagen_archivo": "atornillador_inalambrico_12v.jpg"
 	},
 	{
 		"id": 12,
 		"nombre": "Sierra circular 1400 W",
 		"categoria": "Herramientas eléctricas",
 		"precio": 69990,
-		"stock": 4
+		"stock": 4,
+		"imagen_url": "https://loremflickr.com/640/360/circular,saw,lumber?lock=12",
+		"imagen_archivo": "sierra_circular_1400w.jpg"
 	},
 	{
 		"id": 13,
 		"nombre": "Broca para concreto 8 mm",
 		"categoria": "Accesorios para herramientas",
 		"precio": 2490,
-		"stock": 50
+		"stock": 50,
+		"imagen_url": "https://loremflickr.com/640/360/masonry,drill,bit?lock=13",
+		"imagen_archivo": "broca_concreto_8mm.jpg"
 	},
 	{
 		"id": 14,
 		"nombre": "Juego de brocas para metal 13 piezas",
 		"categoria": "Accesorios para herramientas",
 		"precio": 11990,
-		"stock": 21
+		"stock": 21,
+		"imagen_url": "https://loremflickr.com/640/360/metal,drill,bits?lock=14",
+		"imagen_archivo": "juego_brocas_metal_13_piezas.jpg"
 	},
 	{
 		"id": 15,
 		"nombre": "Disco de corte para metal 4 1/2 pulgadas",
 		"categoria": "Accesorios para herramientas",
 		"precio": 1990,
-		"stock": 33
+		"stock": 33,
+		"imagen_url": "https://loremflickr.com/640/360/metal,cutting,disc?lock=15",
+		"imagen_archivo": "disco_corte_metal_4_5_pulgadas.jpg"
 	},
 	{
 		"id": 16,
 		"nombre": "Lija para madera grano 120",
 		"categoria": "Abrasivos",
 		"precio": 890,
-		"stock": 46
+		"stock": 46,
+		"imagen_url": "https://loremflickr.com/640/360/wood,sanding,sandpaper?lock=16",
+		"imagen_archivo": "lija_madera_grano_120.jpg"
 	},
 	{
 		"id": 17,
 		"nombre": "Tornillo para madera 6 x 1 1/2 pulgadas",
 		"categoria": "Fijaciones",
 		"precio": 2990,
-		"stock": 28
+		"stock": 28,
+		"imagen_url": "https://loremflickr.com/640/360/wood,screws,carpentry?lock=17",
+		"imagen_archivo": "tornillo_madera_6x1_5_pulgadas.jpg"
 	},
 	{
 		"id": 18,
 		"nombre": "Tornillo autoperforante 8 x 1 pulgada",
 		"categoria": "Fijaciones",
 		"precio": 3490,
-		"stock": 0
+		"stock": 0,
+		"imagen_url": "https://loremflickr.com/640/360/self,tapping,screw,metal?lock=18",
+		"imagen_archivo": "tornillo_autoperforante_8x1_pulgada.jpg"
 	},
 	{
 		"id": 19,
 		"nombre": "Perno hexagonal 3/8 x 2 pulgadas",
 		"categoria": "Fijaciones",
 		"precio": 4490,
-		"stock": 17
+		"stock": 17,
+		"imagen_url": "https://loremflickr.com/640/360/hex,bolt,hardware?lock=19",
+		"imagen_archivo": "perno_hexagonal_3_8x2_pulgadas.jpg"
 	},
 	{
 		"id": 20,
 		"nombre": "Tuerca hexagonal 3/8 pulgadas",
 		"categoria": "Fijaciones",
 		"precio": 1590,
-		"stock": 31
+		"stock": 31,
+		"imagen_url": "https://loremflickr.com/640/360/hex,nut,hardware?lock=20",
+		"imagen_archivo": "tuerca_hexagonal_3_8_pulgadas.jpg"
 	},
 	{
 		"id": 21,
 		"nombre": "Arandela plana 3/8 pulgadas",
 		"categoria": "Fijaciones",
 		"precio": 990,
-		"stock": 38
+		"stock": 38,
+		"imagen_url": "https://loremflickr.com/640/360/flat,washer,hardware?lock=21",
+		"imagen_archivo": "arandela_plana_3_8_pulgadas.jpg"
 	},
 	{
 		"id": 22,
 		"nombre": "Tarugo nylon 8 mm con tornillo",
 		"categoria": "Fijaciones",
 		"precio": 2290,
-		"stock": 44
+		"stock": 44,
+		"imagen_url": "https://loremflickr.com/640/360/nylon,wall,anchor?lock=22",
+		"imagen_archivo": "tarugo_nylon_8mm_con_tornillo.jpg"
 	},
 	{
 		"id": 23,
 		"nombre": "Clavo corriente 2 pulgadas 1 kg",
 		"categoria": "Fijaciones",
 		"precio": 2690,
-		"stock": 25
+		"stock": 25,
+		"imagen_url": "https://loremflickr.com/640/360/construction,nails,hardware?lock=23",
+		"imagen_archivo": "clavo_corriente_2_pulgadas_1kg.jpg"
 	},
 	{
 		"id": 24,
-		"nombre": "Cadena galvanizada 6 mm por metro",
-		"categoria": "Ferretería general",
-		"precio": 3990,
-		"stock": 13
+		"nombre": "Malla para refuerzo de taludes 2 x 25 m",
+		"categoria": "Refuerzo de taludes",
+		"precio": 89990,
+		"stock": 13,
+		"imagen_url": "https://loremflickr.com/640/360/geogrid,slope,reinforcement?lock=24",
+		"imagen_archivo": "malla_refuerzo_taludes.jpg"
 	},
 	{
 		"id": 25,
-		"nombre": "Candado de latón 40 mm",
-		"categoria": "Seguridad",
-		"precio": 6990,
-		"stock": 8
+		"nombre": "Geotextil no tejido 300 g/m²",
+		"categoria": "Geosintéticos",
+		"precio": 45990,
+		"stock": 8,
+		"imagen_url": "https://loremflickr.com/640/360/geotextile,road,construction?lock=25",
+		"imagen_archivo": "geotextil_no_tejido_300g_m2.jpg"
 	},
 	{
 		"id": 26,
-		"nombre": "Cerradura cilíndrica para puerta",
-		"categoria": "Seguridad",
-		"precio": 15990,
-		"stock": 5
+		"nombre": "Geomembrana HDPE 1,5 mm",
+		"categoria": "Geosintéticos",
+		"precio": 129990,
+		"stock": 5,
+		"imagen_url": "https://loremflickr.com/640/360/hdpe,geomembrane,construction?lock=26",
+		"imagen_archivo": "geomembrana_hdpe_1_5mm.jpg"
 	},
 	{
 		"id": 27,
-		"nombre": "Cinta aisladora negra 18 mm",
-		"categoria": "Electricidad",
-		"precio": 1890,
-		"stock": 36
+		"nombre": "Malla estructural electrosoldada 6 x 2,4 m",
+		"categoria": "Acero para hormigón",
+		"precio": 32990,
+		"stock": 36,
+		"imagen_url": "https://loremflickr.com/640/360/welded,wire,mesh,concrete?lock=27",
+		"imagen_archivo": "malla_estructural_electrosoldada.jpg"
 	},
 	{
 		"id": 28,
-		"nombre": "Enchufe macho industrial 16 A",
-		"categoria": "Electricidad",
-		"precio": 3290,
-		"stock": 0
+		"nombre": "Aditivo para mezcla asfáltica modificada 20 kg",
+		"categoria": "Mezclas asfálticas",
+		"precio": 74990,
+		"stock": 0,
+		"imagen_url": "https://loremflickr.com/640/360/asphalt,mix,road,additive?lock=28",
+		"imagen_archivo": "aditivo_mezcla_asfaltica.jpg"
 	},
 	{
 		"id": 29,
-		"nombre": "Interruptor simple blanco",
-		"categoria": "Electricidad",
-		"precio": 2490,
-		"stock": 22
+		"nombre": "Emulsión asfáltica catiónica 200 kg",
+		"categoria": "Mezclas asfálticas",
+		"precio": 189990,
+		"stock": 22,
+		"imagen_url": "https://loremflickr.com/640/360/asphalt,emulsion,road?lock=29",
+		"imagen_archivo": "emulsion_asfaltica_cationica.jpg"
 	},
 	{
 		"id": 30,
-		"nombre": "Alargador eléctrico 10 metros",
-		"categoria": "Electricidad",
-		"precio": 12990,
-		"stock": 10
+		"nombre": "Regla vibratoria para hormigón 2 m",
+		"categoria": "Equipos para obra civil",
+		"precio": 259990,
+		"stock": 10,
+		"imagen_url": "https://loremflickr.com/640/360/concrete,vibrating,screed?lock=30",
+		"imagen_archivo": "regla_vibratoria_hormigon_2m.jpg"
 	},
 	{
 		"id": 31,
 		"nombre": "Tubo LED 18 W 120 cm",
 		"categoria": "Iluminación",
 		"precio": 7990,
-		"stock": 16
+		"stock": 16,
+		"imagen_url": "https://loremflickr.com/640/360/led,tube,light?lock=31",
+		"imagen_archivo": "tubo_led_18w_120cm.jpg"
 	},
 	{
 		"id": 32,
 		"nombre": "Ampolleta LED luz cálida 9 W",
 		"categoria": "Iluminación",
 		"precio": 2490,
-		"stock": 41
+		"stock": 41,
+		"imagen_url": "https://loremflickr.com/640/360/warm,led,lightbulb?lock=32",
+		"imagen_archivo": "ampolleta_led_luz_calida_9w.jpg"
 	},
 	{
 		"id": 33,
 		"nombre": "Silicona sellante transparente 280 ml",
 		"categoria": "Adhesivos y sellantes",
 		"precio": 4990,
-		"stock": 19
+		"stock": 19,
+		"imagen_url": "https://loremflickr.com/640/360/silicone,sealant,construction?lock=33",
+		"imagen_archivo": "silicona_sellante_transparente_280ml.jpg"
 	},
 	{
 		"id": 34,
 		"nombre": "Adhesivo de montaje 300 g",
 		"categoria": "Adhesivos y sellantes",
 		"precio": 5990,
-		"stock": 0
+		"stock": 0,
+		"imagen_url": "https://loremflickr.com/640/360/mounting,adhesive,construction?lock=34",
+		"imagen_archivo": "adhesivo_montaje_300g.jpg"
 	},
 	{
 		"id": 35,
 		"nombre": "Cinta teflón 12 mm",
 		"categoria": "Plomería",
 		"precio": 990,
-		"stock": 47
+		"stock": 47,
+		"imagen_url": "https://loremflickr.com/640/360/plumbing,thread,tape?lock=35",
+		"imagen_archivo": "cinta_teflon_12mm.jpg"
 	},
 	{
 		"id": 36,
 		"nombre": "Llave de paso 1/2 pulgada",
 		"categoria": "Plomería",
 		"precio": 6490,
-		"stock": 14
+		"stock": 14,
+		"imagen_url": "https://loremflickr.com/640/360/water,shutoff,valve?lock=36",
+		"imagen_archivo": "llave_paso_1_2_pulgada.jpg"
 	},
 	{
 		"id": 37,
 		"nombre": "Flexibles para lavaplatos 1/2 pulgada",
 		"categoria": "Plomería",
 		"precio": 4490,
-		"stock": 0
+		"stock": 0,
+		"imagen_url": "https://loremflickr.com/640/360/flexible,plumbing,hose?lock=37",
+		"imagen_archivo": "flexibles_lavaplatos_1_2_pulgada.jpg"
 	},
 	{
 		"id": 38,
 		"nombre": "Guantes de trabajo reforzados",
 		"categoria": "Seguridad industrial",
 		"precio": 3990,
-		"stock": 27
+		"stock": 27,
+		"imagen_url": "https://loremflickr.com/640/360/reinforced,work,gloves?lock=38",
+		"imagen_archivo": "guantes_trabajo_reforzados.jpg"
 	},
 	{
 		"id": 39,
 		"nombre": "Lentes de seguridad transparentes",
 		"categoria": "Seguridad industrial",
 		"precio": 2990,
-		"stock": 32
+		"stock": 32,
+		"imagen_url": "https://loremflickr.com/640/360/protective,safety,glasses?lock=39",
+		"imagen_archivo": "lentes_seguridad_transparentes.jpg"
 	},
 	{
 		"id": 40,
 		"nombre": "Casco de seguridad ajustable",
 		"categoria": "Seguridad industrial",
 		"precio": 8990,
-		"stock": 3
+		"stock": 3,
+		"imagen_url": "https://loremflickr.com/640/360/yellow,hardhat,construction?lock=40",
+		"imagen_archivo": "casco_seguridad_ajustable.jpg"
 	}
 ]

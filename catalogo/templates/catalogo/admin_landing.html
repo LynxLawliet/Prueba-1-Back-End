@@ -1,0 +1,69 @@
+{% extends 'catalogo/base.html' %}
+
+{% block title %}Administración | Ferretería Caro-Kahn{% endblock %}
+
+{% block content %}
+    <section class="panel-administracion" aria-labelledby="titulo-administracion">
+        <p class="etiqueta-seccion">Área interna</p>
+        <h1 id="titulo-administracion">Panel de administración</h1>
+        <p class="bajada">Este formulario es una simulación académica. No se guardan cambios en disco ni en una base de datos.</p>
+
+        {% if messages %}
+            <div class="mensajes" aria-live="polite">
+                {% for message in messages %}
+                    <p class="mensaje-exito">{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        <form method="post" class="formulario-administracion">
+            {% csrf_token %}
+            <label for="titulo-landing">Título de la página principal</label>
+            <input id="titulo-landing" name="titulo_landing" type="text" value="Ferretería Caro-Kahn" required>
+            <button class="boton-detalle" type="submit">Simular actualización</button>
+        </form>
+    </section>
+
+    <style>
+        .panel-administracion {
+            background: var(--blanco);
+            box-shadow: var(--sombra);
+            margin: 0 auto;
+            max-width: 720px;
+            padding: 32px;
+        }
+
+        .panel-administracion h1 {
+            margin: 0 0 10px;
+        }
+
+        .formulario-administracion {
+            display: grid;
+            gap: 10px;
+            margin-top: 28px;
+        }
+
+        .formulario-administracion label {
+            font-weight: 700;
+        }
+
+        .formulario-administracion input {
+            border: 1px solid var(--borde);
+            border-radius: 4px;
+            padding: 12px;
+        }
+
+        .formulario-administracion .boton-detalle {
+            justify-self: start;
+            margin-top: 8px;
+        }
+
+        .mensaje-exito {
+            background: #e6f5ed;
+            border-left: 4px solid var(--exito);
+            color: var(--exito);
+            margin: 24px 0 0;
+            padding: 12px;
+        }
+    </style>
+{% endblock %}
