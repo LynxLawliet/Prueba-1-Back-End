@@ -168,8 +168,12 @@ def actualizar_cantidad_carrito(request, producto_id):
         except (TypeError, ValueError):
             cantidad = 0
 
-        if not producto or cantidad < 1:
-            messages.error(request, 'La cantidad debe ser un número mayor que cero.')
+        if cantidad <= 0:
+            carrito.pop(clave_producto, None)
+            _guardar_carrito(request, carrito)
+            messages.info(request, 'Producto eliminado del carrito.')
+        elif not producto:
+            messages.error(request, 'Producto no encontrado en la ferretería.')
         elif cantidad > producto['stock']:
             messages.warning(request, f"Solo hay {producto['stock']} unidad(es) disponibles.")
         else:

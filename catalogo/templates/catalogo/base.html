@@ -196,39 +196,66 @@
             background: var(--asfalto);
             color: #dce3e6;
             margin-top: auto;
-            padding: 32px 0;
+            padding: 32px 0 18px;
         }
 
         .pie-contenido {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 32px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+            gap: 28px;
+            align-items: start;
         }
 
-        .pie-contenido h2 {
+        .pie-columna h2 {
             color: var(--acento);
             font-size: 1rem;
-            margin: 0 0 8px;
+            margin: 0 0 12px;
         }
 
-        .pie-contenido p {
+        .pie-columna p,
+        .pie-columna li,
+        .pie-columna a {
+            color: #dce3e6;
             margin: 4px 0;
         }
 
-        .enlaces-contacto {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
+        .pie-columna ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
-        .enlaces-contacto a {
+        .pie-columna li {
+            margin-bottom: 8px;
+        }
+
+        .enlaces-contacto,
+        .redes-sociales {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .enlaces-contacto a,
+        .redes-sociales a {
             color: var(--blanco);
         }
 
         .enlaces-contacto a:hover,
-        .enlaces-contacto a:focus-visible {
+        .enlaces-contacto a:focus-visible,
+        .redes-sociales a:hover,
+        .redes-sociales a:focus-visible {
             color: var(--acento);
+            text-decoration: none;
+        }
+
+        .pie-bajo {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            color: #b9c3c8;
+            font-size: 0.9rem;
+            margin-top: 22px;
+            padding-top: 16px;
+            text-align: center;
         }
 
         /* Componentes compartidos */
@@ -245,15 +272,24 @@
 
         /* Responsive */
         @media (max-width: 800px) {
-            .barra-superior,
-            .pie-contenido {
+            .barra-superior {
                 align-items: stretch;
                 flex-direction: column;
+            }
+
+            .pie-contenido {
+                grid-template-columns: 1fr 1fr;
             }
 
             .buscador {
                 max-width: none;
                 order: 3;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .pie-contenido {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -329,17 +365,42 @@
 
     <footer>
         <div class="contenedor pie-contenido">
-            <div>
+            <div class="pie-columna">
                 <h2>Ferretería Caro-Kahn</h2>
+                <p>Materiales, herramientas y soluciones para proyectos de construcción, mantenimiento y obra civil.</p>
                 <p>&copy; 2026 Catálogo de Materiales e Infraestructura</p>
             </div>
-            <div>
+
+            <div class="pie-columna">
+                <h2>Explora</h2>
+                <ul>
+                    <li><a href="{% url 'lista' %}">Catálogo</a></li>
+                    <li><a href="{% url 'carrito' %}">Mi carrito</a></li>
+                    <li><a href="{% url 'checkout' %}">Finalizar compra</a></li>
+                </ul>
+            </div>
+
+            <div class="pie-columna">
                 <h2>Contacto</h2>
                 <div class="enlaces-contacto">
                     <a href="mailto:contacto@carokahn.cl">contacto@carokahn.cl</a>
                     <a href="tel:+56221234567">+56 2 2123 4567</a>
                 </div>
+                <p>Atención: Lun - Sab / 08:00 - 18:00</p>
             </div>
+
+            <div class="pie-columna">
+                <h2>Síguenos</h2>
+                <div class="redes-sociales">
+                    <a href="https://www.facebook.com" target="_blank" rel="noreferrer">Facebook</a>
+                    <a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contenedor pie-bajo">
+            Ferretería Caro-Kahn • Soluciones para la construcción y el hogar
         </div>
     </footer>
 </body>
