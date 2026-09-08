@@ -1,10 +1,17 @@
 Explica las instrucciones del archivo adjunto // Explica a detalle y dame los comandos necesarios para la "Etapa 0" //
 Recomienda un "Prompt" para cumplir con las siguientes características: ...... Según el archivo.
  
-Actúa como un desarrollador backend generando datos de prueba. Necesito que crees un arreglo JSON válido con exactamente 40 objetos que representen el catálogo de una ferretería.
-Cada objeto debe contener obligatoriamente los siguientes campos:  id: un número entero secuencial del 1 al 40.nombre: el nombre del producto (sé variado y realista).categoria: la clasificación del artículo (ej. Herramientas manuales, Fijaciones).precio: un número entero positivo en pesos chilenos.stock: un número entero entre 0 y 50. Es fundamental que al menos 5 productos tengan el stock en "0" para poder probar la lógica condicional visual de la interfaz.
-Devuelve únicamente el arreglo JSON, sin explicaciones adicionales ni bloques de texto.
+Consulta 1:
 
+"Actúa como un desarrollador backend generando datos de prueba. Necesito que crees un arreglo JSON válido con exactamente 40 objetos que representen el catálogo de una ferretería.
+Cada objeto debe contener obligatoriamente los siguientes campos:  id: un número entero secuencial del 1 al 40.nombre: el nombre del producto (sé variado y realista).categoria: la clasificación del artículo (ej. Herramientas manuales, Fijaciones).precio: un número entero positivo en pesos chilenos.stock: un número entero entre 0 y 50. Es fundamental que al menos 5 productos tengan el stock en "0" para poder probar la lógica condicional visual de la interfaz.
+Devuelve únicamente el arreglo JSON, sin explicaciones adicionales ni bloques de texto."
+
+Respuesta de la IA: Entregó un arreglo JSON válido con 40 objetos estructurados con los campos solicitados y variaciones de stock, incluyendo valores en cero.
+
+Qué se usó o modificó: Se utilizó el código generado tal cual para crear el archivo productos.json, aunque se revisaron manualmente los montos de los precios para asegurar que fueran realistas para el mercado chileno.
+
+Consulta 2:
 
 "Actúa como un desarrollador front end experto en Django. Necesito diseñar la interfaz para un catálogo web de una ferretería utilizando Django Template Language (DTL).
 
@@ -20,7 +27,11 @@ Requisitos técnicos y de diseño:
    - Un botón o enlace que apunte a la vista de detalle: {% url 'detalle' producto.id %}
 3. Entrega el código HTML limpio, semántico y listo para copiar en la carpeta de templates."
 
+Respuesta de la IA: Generó el código base con las etiquetas de herencia ({% extends %}, {% block content %}) y un bucle {% for %} básico, utilizando clases del framework Bootstrap 5.
 
+Qué se usó o modificó: Se extrajo únicamente la lógica de sintaxis de Django (bucle condicionales y URLs). Se descartó por completo el código de Bootstrap propuesto, ya que se optó por construir un diseño propio con CSS puro.
+
+Consulta 3:
 
 "Actúa como un desarrollador Front End Senior. Necesito estructurar y añadir nuevas funcionalidades visuales a la Landing Page (plantillas base.html y lista.html) de un proyecto académico en Django. El sitio es un catálogo online para una ferretería enfocada en materiales técnicos e infraestructura.
 
@@ -50,7 +61,11 @@ El código debe respetar la sintaxis de herencia de templates ({% block content 
 
 Por favor, entrégame el código de base.html y lista.html por separado, y explica brevemente cómo esta estructura mejora la mantenibilidad del proyecto."
 
+Respuesta de la IA: Proporcionó una estructura semántica y un bloque de estilos CSS puro organizado por variables, enfocándose en una paleta de colores industrial y un diseño responsivo utilizando CSS Grid.
 
+Qué se usó o modificó: Se integró el código CSS en la etiqueta <style> de base.html. Se modificaron las variables de color hexadecimales (--acento, --asfalto) para ajustarlas a la identidad del catálogo y se adaptaron los nombres de las clases para que coincidieran con el HTML previo.
+
+Consulta 4:
 
 "Actúa como un desarrollador experto en Django y frontend. Estoy construyendo la Etapa 3 de un catálogo web de ferretería. La restricción técnica principal es que no puedo usar modelos ni conexión a base de datos; todos los productos se procesan desde un archivo productos.json leído en views.py.
 
@@ -63,3 +78,11 @@ Filtro Dinámico: Crea un script en JavaScript puro para lista.html que permita 
 Simulación de Compra: Diseña un botón de 'Añadir al carro' en la vista de detalle. Al hacer clic, utiliza la API de localStorage de JavaScript para guardar temporalmente los productos seleccionados y muestra un modal confirmando la reserva del pedido, simulando el proceso de forma estática.
 
 Panel de Administración (Mockup): Crea una ruta, una vista y un template llamado admin_landing.html. Debe lucir como un panel de control con un formulario HTML que simule la edición del título de la página principal. Al enviar el formulario mediante POST, la vista debe simplemente retornar un mensaje de éxito usando el framework messages de Django, sin guardar nada en disco."
+
+Respuesta de la IA: La herramienta generó un bloque de código extenso que incluía la actualización del archivo JSON con enlaces a imágenes de prueba, un script en JavaScript para filtrar tarjetas en el frontend, y toda la lógica (vistas, rutas y HTML) para simular un carrito de compras y un panel de control estático.  
+
+Qué se usó o modificó: Se integró únicamente el campo de imágenes en el JSON y el script de JavaScript puro para el filtro dinámico, ya que representan una mejora visual válida para la Etapa 3 que opera exclusivamente en el lado del cliente. Se descartó y eliminó por completo todo el código relacionado con el carrito de compras, el inicio de sesión y el panel de administración, ya que estos elementos excedían los límites de las instrucciones de la evaluación y añadían rutas innecesarias que podían generar errores de ejecución.
+
+Conclusión:
+
+Durante el desarrollo de esta primera evaluación en los laboratorios de INACAP Sede Osorno, utilicé la Inteligencia Artificial principalmente como una herramienta para acelerar la escritura de código repetitivo y maquetar el diseño front-end. Le pedí generar los 40 registros en formato JSON porque inventar cada material de ferretería a mano habría consumido demasiado tiempo de la prueba. Esa respuesta me sirvió tal cual, permitiéndome enfocarme en la lógica de views.py. Por otro lado, al solicitar el diseño de la interfaz, la IA tendía a sobre-complicar el código sugiriendo el uso de Bootstrap o inventando funcionalidades fuera de alcance, como sistemas de carrito de compras o paneles de administración. Tuve que corregir exhaustivamente esas respuestas, eliminando todo el código sobrante para no romper la restricción de la evaluación, que exige trabajar sin base de datos. En este proceso aprendí que es vital aplicar un filtro crítico a las respuestas de la IA, asegurándome de extraer únicamente la herencia de plantillas, el bucle de iteración y el CSS puro que necesitaba para cumplir estrictamente con la mejora visual.
