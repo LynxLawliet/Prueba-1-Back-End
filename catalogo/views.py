@@ -1,6 +1,7 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse, Http404
 from django.contrib import messages
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.urls import reverse
 import json
 import os
@@ -124,6 +125,10 @@ def lista(request):
     return render(request, 'catalogo/lista.html', contexto)
 
 def admin_landing(request):
+    if not request.user.is_authenticated or not request.user.is_staff:
+        messages.error(request, 'Debes iniciar sesión con una cuenta administradora.')
+        return redirect(f"{reverse('login')}?next={reverse('admin_landing')}")
+
     productos = cargar_datos()
     contenido = cargar_contenido()
     if request.method == 'POST':
@@ -334,6 +339,13 @@ def login(request):
     if request.method == 'POST':
         usuario = request.POST.get('usuario', '').strip()
         contrasena = request.POST.get('contrasena', '')
+        usuario_django = authenticate(request, username=usuario, password=contrasena)
+        if usuario_django and usuario_django.is_staff:
+            auth_login(request, usuario_django)
+            request.session['usuario_ficticio'] = usuario_django.get_username()
+            messages.success(request, f'Bienvenido/a, {usuario_django.get_username()}.')
+            return redirect(request.POST.get('next') or 'admin_landing')
+
         usuario_registrado = request.session.get('usuario_registrado')
         if (
             usuario
@@ -369,6 +381,7 @@ def registro(request):
 
 
 def logout(request):
+    auth_logout(request)
     request.session.pop('usuario_ficticio', None)
     messages.success(request, 'La sesión simulada fue cerrada.')
     return redirect('lista')
