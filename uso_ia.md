@@ -83,6 +83,52 @@ Respuesta de la IA: La herramienta generó un bloque de código extenso que incl
 
 Qué se usó o modificó: Se integró únicamente el campo de imágenes en el JSON y el script de JavaScript puro para el filtro dinámico, ya que representan una mejora visual válida para la Etapa 3 que opera exclusivamente en el lado del cliente. Se descartó y eliminó por completo todo el código relacionado con el carrito de compras, el inicio de sesión y el panel de administración, ya que estos elementos excedían los límites de las instrucciones de la evaluación y añadían rutas innecesarias que podían generar errores de ejecución.
 
+Consulta 5:
+
+Actúa como un desarrollador Front End Senior experto en Django Template Language y diseño web moderno.
+
+Necesito rediseñar y reestructurar mi catálogo web de ferretería en Django (nombre: 'Ferretería Caro-Kahn') para transformarlo de un listado simple en una Landing Page moderna, persuasiva y estéticamente atractiva, completamente en español.
+
+Requisitos de Estructura y Contenido (Landing Page):
+
+Diseña una estructura persuasiva que incluya las siguientes secciones principales:
+
+Sección Héroe (Hero Section): Un encabezado de pantalla completa con un título impactante (ej: "Materiales y Soluciones Profesionales para tus Proyectos de Construcción"), una descripción convincente y un botón de Llamado a la Acción (CTA) grande y visible (ej: "Explora Nuestro Catálogo Técnico").
+
+Sección de Beneficios (Why Us): Tres o cuatro tarjetas minimalistas que expliquen las ventajas competitivas de la ferretería (ej: "Asesoría Técnica Experta", "Stock Garantizado", "Envío Directo a Obra", "Calidad Certificada").
+
+Sección del Catálogo (Adaptada): Integra la cuadrícula de productos existente, pero con un diseño de tarjetas (cards) mucho más limpio y atractivo. Mantén el bucle {% for producto in productos %}, pero cada tarjeta debe tener una imagen grande (simulada con placehold.co), nombre, categoría, precio formateado y un botón de detalle elegante.
+
+Sección de Testimonios (Mockup): Una sección estática simulando opiniones de clientes satisfechos (ingenieros, constructores) para generar confianza.
+
+Sección de Llamado a la Acción Final: Un panel de cierre invitando a cotizar, contactar o descargar un catálogo técnico.
+
+Estética Moderna y Detalles Visuales:
+
+Utiliza CSS puro (sin frameworks como Bootstrap) para un diseño minimalista y ligero.
+
+Aplica una cuadrícula responsiva (CSS Grid) para el catálogo y Flexbox para el layout general.
+
+Elige una paleta de colores profesional e industrial, inspirada en las capturas previas: grises asfalto (`#252a2e`), blanco para claridad (`#ffffff`) y un color de acento de alta visibilidad como naranja o amarillo seguridad (`#f5a900`).
+
+Utiliza una tipografía moderna sans-serif legible (como Segoe UI o similar).
+
+Añade micro-interacciones sutiles, como efectos de `hover` suaves en las tarjetas y botones, y un diseño "aireado" con buen uso de espacios en blanco.
+
+Integración con Django:
+
+El código debe respetar la sintaxis de herencia de templates ({% block content %}, {% extends 'catalogo/base.html' %}).
+
+Por favor, entrégame el código de `base.html` y `lista.html` (o `landing.html`, si prefieres renombrarlo) por separado, con todo el CSS incrustado en `<style>` en `base.html` y `<style scoped>` o similar en `lista.html` (o el CSS separado y explicado cómo integrarlo).
+
+Explica brevemente cómo esta estructura mejora la mantenibilidad del proyecto.
+
+Respuesta de la IA:
+Entregó el código completo para base.html y lista.html, estructurando una Landing Page completa que incluía la Sección Héroe, tarjetas de beneficios, el catálogo con CSS Grid, testimonios y un llamado a la acción final, aplicando correctamente la paleta de colores asfalto/amarillo y la sintaxis de Django.
+
+Qué se usó o modificó:
+Se extrajo y utilizó el CSS puro para la cuadrícula responsiva (Grid) de las tarjetas de productos y la estructuración del encabezado. Sin embargo, se eliminaron por completo las secciones de "Héroe", "Beneficios", "Testimonios" y "Llamado a la Acción Final", ya que añadían contenido estático que excedía el alcance de las instrucciones de la evaluación. El código se redujo para mantener únicamente la visualización del catálogo y el resumen calculado, asegurando el cumplimiento estricto de la rúbrica.
+
 Conclusión:
 
 Durante el desarrollo de esta primera evaluación en los laboratorios de INACAP Sede Osorno, utilicé la Inteligencia Artificial principalmente como una herramienta para acelerar la escritura de código repetitivo y maquetar el diseño front-end. Le pedí generar los 40 registros en formato JSON porque inventar cada material de ferretería a mano habría consumido demasiado tiempo de la prueba. Esa respuesta me sirvió tal cual, permitiéndome enfocarme en la lógica de views.py. Por otro lado, al solicitar el diseño de la interfaz, la IA tendía a sobre-complicar el código sugiriendo el uso de Bootstrap o inventando funcionalidades fuera de alcance, como sistemas de carrito de compras o paneles de administración. Tuve que corregir exhaustivamente esas respuestas, eliminando todo el código sobrante para no romper la restricción de la evaluación, que exige trabajar sin base de datos. En este proceso aprendí que es vital aplicar un filtro crítico a las respuestas de la IA, asegurándome de extraer únicamente la herencia de plantillas, el bucle de iteración y el CSS puro que necesitaba para cumplir estrictamente con la mejora visual.

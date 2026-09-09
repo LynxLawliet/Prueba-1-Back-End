@@ -6,14 +6,77 @@ import json
 import os
 from django.conf import settings
 
+CONTENIDO_POR_DEFECTO = {
+    'marca': 'Ferretería Caro-Kahn',
+    'home_etiqueta': 'Todo para obra, hogar y mantenimiento',
+    'home_titulo': 'Materiales y herramientas que impulsan cada proyecto.',
+    'home_descripcion': 'Desde herramientas manuales hasta materiales para construcción, en Ferretería Caro-Kahn encontrarás soluciones confiables para obra, remodelación y mantenimiento diario.',
+    'home_cta': 'Explorar catálogo',
+    'catalogo_etiqueta': 'Soluciones para tus proyectos',
+    'catalogo_titulo': 'Nuestro catálogo técnico',
+    'catalogo_descripcion': 'Encuentra herramientas, materiales y accesorios para cada trabajo.',
+    'home_beneficios_etiqueta': '¿Por qué elegirnos?',
+    'home_beneficios_titulo': 'Más que herramientas, soluciones para cada trabajo.',
+    'beneficio_1_titulo': 'Amplio stock',
+    'beneficio_1_descripcion': 'Disponibilidad para obra, mantenimiento y uso doméstico.',
+    'beneficio_2_titulo': 'Calidad profesional',
+    'beneficio_2_descripcion': 'Productos pensados para un uso frecuente y exigente.',
+    'beneficio_3_titulo': 'Compra rápida',
+    'beneficio_3_descripcion': 'Proceso simple para comparar, agregar y confirmar compras.',
+    'home_cta_etiqueta': 'Tu proyecto empieza aquí',
+    'home_cta_titulo': 'Encuentra lo que necesitas para construir con confianza.',
+    'lista_hero_titulo': 'Materiales y soluciones profesionales para tus proyectos',
+    'lista_hero_descripcion': 'Encuentra herramientas, materiales y accesorios con información clara de stock, precios y compra directa.',
+    'lista_testimonios_titulo': 'Una compra pensada para profesionales',
+    'testimonio_1_texto': 'Encontrar el producto, revisar el stock y agregarlo al carrito es rápido y claro.',
+    'testimonio_1_autor': 'Cliente de obra',
+    'testimonio_1_rol': 'Compras para construcción',
+    'testimonio_2_texto': 'La información del catálogo ayuda a comparar opciones antes de tomar una decisión.',
+    'testimonio_2_autor': 'Profesional independiente',
+    'testimonio_2_rol': 'Herramientas y mantenimiento',
+    'lista_cta_titulo': '¿Listo para empezar tu próximo proyecto?',
+    'lista_cta_descripcion': 'Selecciona tus productos, revisa tu carrito y completa tu compra.',
+    'footer_descripcion': 'Tu aliado estratégico en materiales y soluciones de construcción profesional.',
+}
+
 def index(request):
-    return HttpResponse("Vista del catálogo funcionando")
+    productos = _productos_con_stock_temporal(request)
+    destacados = productos[:4]
+    categorias = sorted({producto['categoria'] for producto in productos})
+    contexto = {
+        'productos_destacados': destacados,
+        'categorias': categorias,
+        'total_productos': len(productos),
+    }
+    return render(request, 'catalogo/home.html', contexto)
 
 # Función auxiliar para leer el JSON
 def cargar_datos():
     ruta = os.path.join(settings.BASE_DIR, 'catalogo', 'data', 'productos.json')
     with open(ruta, 'r', encoding='utf-8') as f:
-        return json.load(f)
+        productos = json.load(f)
+    for producto in productos:
+        producto.setdefault('descripcion', '')
+        producto.setdefault('visible', True)
+    return productos
+
+
+def cargar_contenido():
+    ruta = os.path.join(settings.BASE_DIR, 'catalogo', 'data', 'contenido.json')
+    try:
+        with open(ruta, 'r', encoding='utf-8') as f:
+            contenido = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        contenido = {}
+    return {**CONTENIDO_POR_DEFECTO, **contenido}
+
+
+def guardar_json(nombre, datos):
+    ruta = os.path.join(settings.BASE_DIR, 'catalogo', 'data', nombre)
+    temporal = f'{ruta}.tmp'
+    with open(temporal, 'w', encoding='utf-8') as f:
+        json.dump(datos, f, ensure_ascii=False, indent=2)
+    os.replace(temporal, ruta)
 
 
 def _productos_con_stock_temporal(request):
@@ -23,7 +86,7 @@ def _productos_con_stock_temporal(request):
         clave_producto = str(producto['id'])
         if clave_producto in stock_temporal:
             producto['stock'] = stock_temporal[clave_producto]
-    return productos
+    return [producto for producto in productos if producto.get('visible', True)]
 
 def lista(request):
     productos = _productos_con_stock_temporal(request)
@@ -61,10 +124,85 @@ def lista(request):
     return render(request, 'catalogo/lista.html', contexto)
 
 def admin_landing(request):
+    productos = cargar_datos()
+    contenido = cargar_contenido()
     if request.method == 'POST':
-        messages.success(request, 'El título de la página se actualizó correctamente (simulación).')
+        accion = request.POST.get('accion')
+        if accion == 'guardar_contenido':
+            campos = CONTENIDO_POR_DEFECTO.keys()
+            contenido.update({campo: request.POST.get(campo, contenido.get(campo, '')) for campo in campos})
+            guardar_json('contenido.json', contenido)
+            messages.success(request, 'Los textos visibles de la Landingpage fueron actualizados.')
+        elif accion == 'guardar_producto':
+            try:
+                producto_id = int(request.POST.get('producto_id', ''))
+                producto = next(producto for producto in productos if producto['id'] == producto_id)
+                stock = int(request.POST.get('stock', '0'))
+                precio = int(request.POST.get('precio', producto.get('precio', 0)))
+                if stock < 0 or precio < 0:
+                    raise ValueError
+                producto['nombre'] = request.POST.get('nombre', '').strip()
+                producto['categoria'] = request.POST.get('categoria', '').strip()
+                producto['descripcion'] = request.POST.get('descripcion', '').strip()
+                producto['imagen_url'] = request.POST.get('imagen_url', '').strip()
+                producto['precio'] = precio
+                producto['stock'] = stock
+                producto['visible'] = request.POST.get('visible') == 'on'
+                if not producto['nombre'] or not producto['categoria']:
+                    raise ValueError
+                guardar_json('productos.json', productos)
+                stock_temporal = request.session.get('stock_temporal', {})
+                stock_temporal.pop(str(producto_id), None)
+                request.session['stock_temporal'] = stock_temporal
+                request.session.modified = True
+                messages.success(request, f'El producto "{producto["nombre"]}" fue actualizado.')
+            except (StopIteration, TypeError, ValueError):
+                messages.error(request, 'No se pudo actualizar el producto. Revisa los campos.')
+        elif accion == 'crear_producto':
+            try:
+                nombre = request.POST.get('nombre', '').strip()
+                categoria = request.POST.get('categoria', '').strip()
+                precio = int(request.POST.get('precio', '0'))
+                stock = int(request.POST.get('stock', '0'))
+                if not nombre or not categoria or precio < 0 or stock < 0:
+                    raise ValueError
+                nuevo_id = max((producto['id'] for producto in productos), default=0) + 1
+                productos.append({
+                    'id': nuevo_id,
+                    'nombre': nombre,
+                    'categoria': categoria,
+                    'precio': precio,
+                    'stock': stock,
+                    'imagen_url': request.POST.get('imagen_url', '').strip(),
+                    'imagen_archivo': '',
+                    'descripcion': request.POST.get('descripcion', ''),
+                    'visible': request.POST.get('visible') == 'on',
+                })
+                guardar_json('productos.json', productos)
+                messages.success(request, f'El producto "{nombre}" fue añadido al catálogo.')
+            except (TypeError, ValueError):
+                messages.error(request, 'No se pudo añadir el producto. Revisa nombre, precio y stock.')
+        elif accion == 'eliminar_producto':
+            try:
+                producto_id = int(request.POST.get('producto_id', ''))
+                producto = next(producto for producto in productos if producto['id'] == producto_id)
+                productos = [producto_actual for producto_actual in productos if producto_actual['id'] != producto_id]
+                guardar_json('productos.json', productos)
+                carrito = request.session.get('carrito', {})
+                carrito.pop(str(producto_id), None)
+                request.session['carrito'] = carrito
+                stock_temporal = request.session.get('stock_temporal', {})
+                stock_temporal.pop(str(producto_id), None)
+                request.session['stock_temporal'] = stock_temporal
+                request.session.modified = True
+                messages.success(request, f'El producto "{producto["nombre"]}" fue eliminado del catálogo.')
+            except (StopIteration, TypeError, ValueError):
+                messages.error(request, 'No se pudo eliminar el producto seleccionado.')
 
-    return render(request, 'catalogo/admin_landing.html')
+    return render(request, 'catalogo/admin_landing.html', {
+        'productos': productos,
+        'contenido': contenido,
+    })
 
 def detalle(request, producto_id):
     productos = _productos_con_stock_temporal(request)
